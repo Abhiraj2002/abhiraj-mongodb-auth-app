@@ -2,19 +2,9 @@ const http = require('http');
 const http = require('http');
 const app = require('./app');
 
-const normalizePort = val => {
-  const port = parseInt(val, 10);
 
-  if (isNaN(port)) {
-    return val;
-  }
-  if (port >= 0) {
-    return port;
-  }
-  return false;
-};
-const port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+const port = process.env.PORT || '8080');
+app.set('port', PORT);
 
 const errorHandler = error => {
   if (error.syscall !== 'listen') {
